@@ -36,7 +36,7 @@ namespace gs {
             size_t start_refine = 500;
             size_t stop_refine = 25'000;
             float grad_threshold = 0.0002f;
-            int sh_degree = 3;
+            int sh_degree = 3;                                // Spherical harmonics degree (0=disabled/constant, 1-3=active SH)
             float opacity_reg = 0.01f;
             float scale_reg = 0.01f;
             float init_opacity = 0.5f;

@@ -19,6 +19,7 @@ set(TEST_SOURCES
 set(OPTIONAL_TEST_FILES
     test_regularization.cpp
     test_render_modes.cpp
+    test_sh_degree0.cpp    # Tests for SH degree==0 optimization
     test_tensor_basic.cpp
     test_tensor_ops.cpp
     test_tensor_memory.cpp
@@ -92,6 +93,7 @@ target_include_directories(lichtfeld_tests PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_BINARY_DIR}/include
     ${CMAKE_SOURCE_DIR}/tests
+    ${CMAKE_SOURCE_DIR}/gsplat  # For gsplat headers (Ops.h, SphericalHarmonics.h, etc.)
     ${CUDAToolkit_INCLUDE_DIRS}
     ${OPENGL_INCLUDE_DIRS}
 )

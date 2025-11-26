@@ -764,7 +764,7 @@ namespace gs::visualizer {
             }
 
             if (opt_params.sh_degree < 0 || opt_params.sh_degree > 3) {
-                gui_manager_->showNotificationPopup(std::format("Invalid SH degree: {} (must be 0-3)", opt_params.sh_degree), true);
+                gui_manager_->showNotificationPopup(std::format("Invalid SH degree: {} (must be 0-3, where 0=disabled)", opt_params.sh_degree), true);
                 LOG_ERROR("Invalid sh_degree value: {}", opt_params.sh_degree);
                 return;
             }
