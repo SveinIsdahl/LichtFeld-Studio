@@ -28,7 +28,7 @@ namespace gsplat {
         const at::Tensor coeffs,              // [..., K, 3]
         const at::optional<at::Tensor> masks, // [...]
         // outputs
-        at::Tensor colors // [..., 2]
+        at::Tensor colors // [..., 3]
     );
 
     void launch_spherical_harmonics_bwd_kernel(

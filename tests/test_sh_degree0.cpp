@@ -187,7 +187,7 @@ TEST_F(SHDegree0Test, ConsistencyWithHigherDegreesZeroCoeffs) {
     
     // Create coefficients for degree 1 with same first coefficient and zeros for higher orders
     auto coeffs_d1 = torch::zeros({N, K_degree1, 3}, torch::TensorOptions().device(device_).dtype(torch::kFloat32));
-    coeffs_d1.index_put_({torch::indexing::Slice(), 0, torch::indexing::Slice()}, coeffs_d0.squeeze(-2));
+    coeffs_d1.index_put_({torch::indexing::Slice(), 0, torch::indexing::Slice()}, coeffs_d0.select(-2, 0));
     
     // Forward pass with degree==0
     auto colors_d0 = gsplat::spherical_harmonics_fwd(0, dirs, coeffs_d0, c10::nullopt);
